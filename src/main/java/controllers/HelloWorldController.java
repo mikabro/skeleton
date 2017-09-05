@@ -10,7 +10,7 @@ import io.dropwizard.jersey.sessions.Session;
 // For a Java class to be eligible to receive ANY requests
 // it must be annotated with at least @Path
 @Path("")
-@Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.TEXT_PLAIN)
 public class HelloWorldController {
 
     // You can specify additional @Path steps; they will be relative
@@ -20,4 +20,11 @@ public class HelloWorldController {
     public String helloWorld(@Session HttpSession session) {
         return "Hello World " + session.toString();
     }
+
+    @GET
+    @Path("/netid")
+    public String netid() {
+        return "mb2587";
+    }
 }
+
